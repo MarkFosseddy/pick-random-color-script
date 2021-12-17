@@ -5,7 +5,7 @@ import random
 import os
 
 scripts_folder = os.path.expanduser("~/color-scripts")
-files = list(filter(lambda f: f != ".git", os.listdir(scripts_folder)))
-script_file_path = os.path.join(scripts_folder, random.choice(random.choices(files, k=5)))
+random_script = random.choice(random.choices(os.listdir(scripts_folder), k=5))
+script_path = os.path.join(scripts_folder, random_script)
 
-subprocess.run(script_file_path)
+subprocess.run(script_path)
